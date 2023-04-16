@@ -18,7 +18,7 @@
               <a class="nav-link" href="#">By Category</a>
             </li>
             <li class="nav-item ms-auto">
-              <a class="nav-link" href="#">Sign in</a>
+              <a class="nav-link" href="/register.jsp">Sign in</a>
             </li>
           </ul>
         </div>

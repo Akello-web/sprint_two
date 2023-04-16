@@ -21,7 +21,7 @@
                 ArrayList<Item> zattar = (ArrayList<Item>) request.getAttribute("itemse");
                 if(zattar!=null){
                     System.out.println("The size: " + zattar.size());
-      for(Item it : zattar){
+                for(Item it : zattar){
             %>
         <div class="row mt-3">
             <div class="col-md-3">
