@@ -19,7 +19,7 @@
 
   <div class="row mt-5">
     <div class="col-12">
-    <h2 class="text-center">Hello <%=myName%>!</h2>
+    <h2 class="text-center">Hello, <%=myName%>!</h2>
     <p class="text-center">This is your profile page</p>
     </div>
   </div>
