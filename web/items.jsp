@@ -11,7 +11,7 @@
     <%@include file="navbar.jsp"%>
     <div class="bg-dark mt-0" style="height: 1px; opacity: 0.3;"></div>
 
-    <div class="row mt-5">
+    <div class="row mt-4">
         <h2 class="text-center">Welcome to <%=nameStore%>!</h2>
         <p class="text-center">Electronic devices with high quality and service</p>
     </div>

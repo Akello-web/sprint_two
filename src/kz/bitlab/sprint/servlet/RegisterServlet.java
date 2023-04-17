@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Objects;
 
 
 @WebServlet (value = "/register")
@@ -35,6 +36,8 @@ public class RegisterServlet extends HttpServlet {
             ResultSet resultSet = statement.executeQuery();
 
             if(resultSet.next()){
+                String emailAccount = resultSet.getString("email");
+                request.setAttribute("admin", emailAccount);
                 String helloName = resultSet.getString("full_name");
                 request.setAttribute("fullName", helloName);
                 request.getRequestDispatcher("/welcome.jsp").forward(request, response);

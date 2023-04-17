@@ -10,19 +10,18 @@
 <div class="container mt-3" style="width: 70%">
     <%@include file="navbar.jsp"%>
 
-
+    <%
+        String fail = (String) request.getAttribute("fail");
+        if(Objects.equals(fail, "failed")){
+    %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Incorrect login or password!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <%
+        }
+    %>
     <form action="/register" method= "POST" class="form-control p-0">
-        <%
-            String fail = (String) request.getAttribute("fail");
-            if(Objects.equals(fail, "failed")){
-        %>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            Incorrect login or password!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <%
-            }
-        %>
             <h4 class="bg-light pt-3 pb-3 ps-2 m-0">Login Page</h4>
             <div class="bg-dark" style="height: 2px; opacity: 0.3;"></div>
                 <table class="table table-borderless mt-4 ms-3">

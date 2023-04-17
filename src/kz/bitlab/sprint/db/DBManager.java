@@ -46,31 +46,20 @@ public class DBManager {
         return items;
     }
 
-    public static ArrayList<User> getUsers(){
-
-        ArrayList<User> users = new ArrayList<>();
-
+    public static void addItem(Item item){
         try {
-            PreparedStatement statement = connection.prepareStatement(
-                    "SELECT * FROM users");
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()){
-                User user = new User();
-                user.setId(resultSet.getInt("id"));
-                user.setEmail(resultSet.getString("email"));
-                user.setEmail(resultSet.getString("password"));
-                user.setEmail(resultSet.getString("full_name"));
+            PreparedStatement statement = connection.prepareStatement("" +
+                    "INSERT INTO sprint_table (name, description, price)" +
+                    "VALUES (?, ?, ?)");
+            statement.setString(1, item.getName());
+            statement.setString(2, item.getDescription());
+            statement.setDouble(3, item.getPrice());
 
-                users.add(user);
-            }
+            statement.executeUpdate();
+            statement.close();
         }catch (Exception e){
             e.printStackTrace();
         }
-        return users;
-    }
-
-    public static void checkUser(){
-
     }
 
 }
